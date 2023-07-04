@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_firebase_notifications/notification_services.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_app/notification_services.dart';
+// import 'package:my_app/notification_services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
     notificationServices.firebaseInit(context);
     notificationServices.setupInteractMessage(context);
     notificationServices.isTokenRefresh();
-
     notificationServices.getDeviceToken().then((value) {
       if (kDebugMode) {
         print('device token');

@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:math';
 
@@ -7,6 +6,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:my_app/message_screen.dart';
 // import 'package:path_provider/path_provider.dart';
 
 class NotificationServices {
@@ -162,12 +162,12 @@ class NotificationServices {
 
   void handleMessage(BuildContext context, RemoteMessage message) {
     if (message.data['type'] == 'msj') {
-      // Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //         builder: (context) => MessageScreen(
-      //               id: message.data['id'],
-      //             )));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => MessageScreen(
+                    id: message.data['id'],
+                  )));
     }
   }
 

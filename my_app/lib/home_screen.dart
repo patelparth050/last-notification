@@ -17,10 +17,10 @@ NotificationServices notificationServices = NotificationServices();
   void initState(){
     super.initState();
     notificationServices.requestNotificationPermission();
-    // notificationServices.forgroundMessage();
+    notificationServices.forgroundMessage();
     notificationServices.firebaseInit(context);
-    // notificationServices.setupInteractMessage(context);
-    // notificationServices.isTokenRefresh();
+    notificationServices.setupInteractMessage(context);
+    notificationServices.isTokenRefresh();
     notificationServices.getDeviceToken().then((value) {
       print('device token');
       print(value);
